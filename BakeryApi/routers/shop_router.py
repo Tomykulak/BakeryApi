@@ -3,7 +3,6 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from crud.shop_crud import create_shop, get_shop_by_id, get_all_shops
 from db.database import get_db
-from models.shop_model import Shop
 from schemas.shop_schema import ShopCreate, ShopResponse
 from fastapi.exceptions import HTTPException
 
