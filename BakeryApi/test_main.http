@@ -1,11 +1,14 @@
-# Test your FastAPI endpoints
+###
+POST http://127.0.0.1:8000/shop/
+Content-Type: application/json
 
-GET http://127.0.0.1:8000/
-Accept: application/json
+{
+    "name": "Bakery Delights",
+    "address": "123 Sweet St, Dessertville",
+    "open_time": "2024-12-19T08:00:00"
+}
+
 
 ###
-
-GET http://127.0.0.1:8000/hello/User
-Accept: application/json
-
-###
+GET http://127.0.0.1:8000/shop/1
+Content-Type: application/json
