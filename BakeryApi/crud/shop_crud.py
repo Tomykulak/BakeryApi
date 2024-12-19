@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Type, List
 
 from sqlalchemy.orm import Session
 
@@ -19,6 +19,12 @@ def create_shop(
     except Exception as e:
         db.rollback()
         raise RuntimeError(f"Database error: {e}")
+
+def get_all_shops(db: Session) -> list[Type[Shop]]:
+    try:
+        return db.query(Shop).all()
+    except Exception as e:
+        raise RuntimeError(f"Error retrieving all shops: {e}")
 
 def get_shop_by_id(
         db: Session,
